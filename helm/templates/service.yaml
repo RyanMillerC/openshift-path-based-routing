@@ -1,11 +1,14 @@
+{{ range .Values.applications }}
+---
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}
+  name: "{{ $.Release.Name }}-{{ .name }}"
 spec:
   ports:
-    - targetPort: 8123
-      port: 8123
+    - targetPort: 8080
+      port: 8080
       protocol: TCP
   selector:
-    app: {{ .Release.Name }}
+    app: "{{ $.Release.Name }}-{{ .name }}"
+{{ end }}
