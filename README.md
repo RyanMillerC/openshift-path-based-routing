@@ -16,6 +16,7 @@ $ cd ..
 ## Deploying to OpenShift
 
 ```bash
+$ cd helm
 $ oc new-project url-rewrite-example
-$ helm install url-rewrite-example .
+$ make install
 ```
