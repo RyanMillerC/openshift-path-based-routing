@@ -1,23 +1,22 @@
+{{ range .Values.applications }}
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ .Release.Name }}
-  annotations:
-    kubernetes.io/ingress.class: "traefik"
-    traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-    traefik.ingress.kubernetes.io/router.tls: "true"
+  name: "{{ $.Release.Name }}-{{ .name }}"
 spec:
   rules:
-  - host: {{ .Values.dnsName }}
+  - host: "{{ $.Values.dnsName }}"
     http:
       paths:
-      - path: /
+      - path: "{{ .uri }}"
         pathType: Prefix
         backend:
           service:
-            name: {{ .Release.Name }}
+            name: "{{ $.Release.Name }}-{{ .name }}"
             port:
-              number: 8123
+              number: 8080
   tls:
   - hosts:
-    - {{ .Values.dnsName }}
+    - "{{ $.Values.dnsName }}"
+{{ end }}
