@@ -1,20 +1,23 @@
+{{ range .Values.applications }}
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-app1
+  name: "{{ $.Release.Name }}-{{ .name }}"
 spec:
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: "{{ $.Release.Name }}-{{ .name }}"
   replicas: 1
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: "{{ $.Release.Name }}-{{ .name }}"
     spec:
       containers:
-      - name: {{ .Release.Name }}
-        image: {{ .Values.image }}
+      - name: "{{ $.Release.Name }}-{{ .name }}"
+        image: "{{ .image }}"
         ports:
         - containerPort: 8080
           protocol: "TCP"
+{{ end }}
