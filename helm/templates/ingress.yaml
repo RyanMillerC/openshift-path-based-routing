@@ -3,6 +3,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  annotations:
+    route.openshift.io/termination: edge
   name: "{{ $.Release.Name }}-{{ .name }}"
 spec:
   rules:
@@ -16,7 +18,4 @@ spec:
             name: "{{ $.Release.Name }}-{{ .name }}"
             port:
               number: 8080
-  tls:
-  - hosts:
-    - "{{ $.Values.dnsName }}"
 {{ end }}
