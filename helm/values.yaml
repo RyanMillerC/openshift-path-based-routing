@@ -2,13 +2,31 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# Replicas of each application
 replicaCount: 1
 
+# Domain the application will be served from
+dnsName: url-rewrite-example.apps.ocp.taco.moe
+
+app1:
+  image: registry.taco.moe/url-rewrite-example/app1:latest
+  uri: '/app1'
+
+app2:
+  image: registry.taco.moe/url-rewrite-example/app2:latest
+  uri: '/app2'
+
+app3:
+  image: registry.taco.moe/url-rewrite-example/app3:latest
+  uri: '/app3'
+
+###################################################
+# Default values for template below.              #
+# Don't change unless you know what you're doing. #
+###################################################
+
 image:
-  repository: nginx
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
