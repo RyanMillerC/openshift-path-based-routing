@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ .Release.Name }}-app1
 spec:
   selector:
     matchLabels:
@@ -16,15 +16,5 @@ spec:
       - name: {{ .Release.Name }}
         image: {{ .Values.image }}
         ports:
-        - containerPort: 8123
+        - containerPort: 8080
           protocol: "TCP"
-        volumeMounts:
-        - mountPath: /config
-          name: config
-        env:
-        - name: NGINX_PORT
-          value: "8123"
-      volumes:
-      - name: config
-        persistentVolumeClaim:
-          claimName: ha-config
