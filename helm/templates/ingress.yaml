@@ -5,6 +5,7 @@ kind: Ingress
 metadata:
   annotations:
     route.openshift.io/termination: edge
+    haproxy.router.openshift.io/rewrite-target: '/'
   name: "{{ $.Release.Name }}-{{ .name }}"
 spec:
   rules:
