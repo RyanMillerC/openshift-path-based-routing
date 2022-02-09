@@ -7,10 +7,10 @@ dnsName: url-rewrite-example.apps.ocp.taco.moe
 applications:
   - name: app1
     image: registry.taco.moe/url-rewrite-example/app1:latest
-    uri: '/app1/'
+    uri: '/app1'
   - name: app2
     image: registry.taco.moe/url-rewrite-example/app2:latest
-    uri: '/app2/'
+    uri: '/app2'
   - name: app3
     image: registry.taco.moe/url-rewrite-example/app3:latest
-    uri: '/app3/'
+    uri: '/app3'
