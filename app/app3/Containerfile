@@ -1,10 +1,1 @@
-# https://github.com/sclorg/nginx-container/blob/master/1.20/README.md
-
-FROM registry.access.redhat.com/ubi8/nginx-120
-
-RUN mkdir ./app3 && \
-    chmod 775 ./app3
-
-ADD index.html ./app3/index.html
-
-CMD nginx -g "daemon off;"
+../Containerfile
