@@ -16,6 +16,8 @@ ClusterIP K8s service.
 
 ```bash
 $ cd app
+# Update .env with registry name!
+$ source .env
 $ make build
 ```
 
