@@ -10,9 +10,9 @@ set -e
 
 BUILD_DIR='./spring-boot-api-example'
 THEME_PARKS=(
-    'hershey_park'
-    'kings_dominion'
-    'six_flags'
+    './api/hershey_park'
+    './api/kings_dominion'
+    './api/six_flags'
 )
 
 [[ -d "${BUILD_DIR}" ]] && rm -rf "${BUILD_DIR}"
