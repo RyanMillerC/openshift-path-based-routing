@@ -29,13 +29,18 @@ endpoints:
 * create ride - POST JSON to [/ride](http://localhost:8080/ride) to create a new ride
 
 Pre-built container images are available
-[here](https://quay.io/rymiller/theme-park-api). The code to build the images
-is available under `./app` in this repo.
+[here](https://quay.io/rymiller/theme-park-api). You don't need to build the
+container images yourself to run this demo. If you really want to build them
+yourself, the code to build the images is available under `./app` in this repo.
 
-## Deploying to OpenShift
+## Requirements
 
-```bash
-$ cd helm
-$ oc new-project url-rewrite-example
-$ make install
-```
+* OpenShift (CodeReady Containers is fine)
+* Machine with `oc` and `helm` installed that can reach the OpenShift API
+
+## Deploying to Demo to OpenShift
+
+1. Clone this repo to local machine
+2. Replace `dnsName` value in `values.yaml` with a valid DNS name for your cluster
+3. `$ oc new-project url-rewrite-example`
+4. `$ make install`
