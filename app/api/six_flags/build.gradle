@@ -33,7 +33,7 @@ test {
 }
 
 String dockerHubUsernameProperty = findProperty('dockerHubUsername') ?: 'tkgregory'
-String imageName = "localhost/theme-park-api/six-flags:latest"
+String imageName = "localhost/theme-park-api:six-flags"
 
 docker {
     name imageName
