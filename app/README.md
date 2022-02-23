@@ -39,8 +39,8 @@ Validate the container images have been created with:
 
 ```bash
 $ podman image ls
-REPOSITORY                               TAG    IMAGE ID      CREATED       SIZE
-localhost/theme-park-api/six-flags       latest dc8cb327f880  21 hours ago  517 MB
-localhost/theme-park-api/kings-dominion  latest 0c273be06662  21 hours ago  517 MB
-localhost/theme-park-api/hersey-park     latest 25c1d717195a  21 hours ago  517 MB
+REPOSITORY                TAG            IMAGE ID      CREATED       SIZE
+localhost/theme-park-api  six-flags      dc8cb327f880  21 hours ago  517 MB
+localhost/theme-park-api  kings-dominion 0c273be06662  21 hours ago  517 MB
+localhost/theme-park-api  hersey-park    25c1d717195a  21 hours ago  517 MB
 ```
