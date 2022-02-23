@@ -17,6 +17,7 @@ spec:
       containers:
       - name: "{{ $.Release.Name }}-{{ .name }}"
         image: "{{ .image }}"
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
           protocol: "TCP"
