@@ -1,4 +1,5 @@
 {{ range .Values.applications }}
+# {{ $.Release }}
 ---
 apiVersion: apps/v1
 kind: Deployment

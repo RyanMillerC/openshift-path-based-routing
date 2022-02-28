@@ -9,10 +9,10 @@ metadata:
   name: "{{ $.Release.Name }}-{{ .name }}"
 spec:
   rules:
-  - host: "{{ $.Values.dnsName }}"
+  - host: "{{ .name }}-{{ $.Values.dnsName }}"
     http:
       paths:
-      - path: "{{ .uri }}"
+      - path: /
         pathType: Prefix
         backend:
           service:
